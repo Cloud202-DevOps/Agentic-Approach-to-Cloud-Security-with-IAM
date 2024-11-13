@@ -1,0 +1,21 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateUser",
+        "iam:AddUserToGroup",
+        "iam:AttachUserPolicy",
+        "iam:EnableMFADevice",
+        "iam:ListUsers",
+        "iam:GetUser",
+        "iam:ListGroups",
+        "iam:UpdateLoginProfile",
+        "iam:CreateAccessKey",
+        "iam:DeleteAccessKey"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
