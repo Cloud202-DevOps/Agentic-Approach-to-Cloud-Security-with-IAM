@@ -1,0 +1,16 @@
+{
+  "ActionGroupCommands": {
+    "CreateUser": {
+      "Command": "Create an IAM user named `{username}` and add them to the `{userGroup}` group. Ensure MFA is enabled and least privilege is applied."
+    },
+    "EnforceMFA": {
+      "Command": "Enforce MFA for IAM user `{username}` to enhance security."
+    },
+    "AssignPermissions": {
+      "Command": "Attach the IAM policy `{policyName}` to user `{username}`. Ensure the policy follows least privilege principles."
+    },
+    "MonitorPolicyCompliance": {
+      "Command": "Review all IAM policies for compliance. Identify any policies that violate least privilege, lack MFA enforcement, or have inactive access keys."
+    }
+  }
+}
