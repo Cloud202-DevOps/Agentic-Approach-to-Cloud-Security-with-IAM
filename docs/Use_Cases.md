@@ -1,5 +1,4 @@
 # Use Cases for Agentic Approach in IAM Automation
-# Use Cases
 
 ## Use Case 1: Automated IAM User Onboarding
 
