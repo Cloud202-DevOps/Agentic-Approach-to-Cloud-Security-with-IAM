@@ -1,0 +1,20 @@
+{
+  "Guardrails": {
+    "LeastPrivilegePolicy": {
+      "Requirement": "All IAM policies must follow the principle of least privilege.",
+      "ViolationResponse": "If an IAM policy grants more permissions than necessary, recommend revising the policy to only include essential permissions."
+    },
+    "MandatoryMFA": {
+      "Requirement": "MFA is required for all IAM users with console access or sensitive permissions.",
+      "ViolationResponse": "If an IAM user does not have MFA enabled, the agent should automatically enforce MFA."
+    },
+    "AccessKeyPolicy": {
+      "Requirement": "Access keys must be rotated every 90 days.",
+      "ViolationResponse": "If an access key is older than 90 days, recommend rotation or disable the key."
+    },
+    "PolicyAttachmentBestPractice": {
+      "Requirement": "IAM policies should be attached to groups instead of individual users when possible.",
+      "ViolationResponse": "Recommend attaching policies to groups rather than individual users, especially for common roles like Developer, Admin, or ReadOnly."
+    }
+  }
+}
