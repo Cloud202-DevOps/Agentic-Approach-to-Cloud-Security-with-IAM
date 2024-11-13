@@ -1,0 +1,65 @@
+{
+  "KnowledgeBase": {
+    "GeneralGuidelines": {
+      "LeastPrivilege": "Always adhere to the principle of least privilege, granting only the permissions necessary for each user to perform their tasks.",
+      "MFAEnforcement": "Enforce Multi-Factor Authentication (MFA) for all users with elevated permissions or access to sensitive resources.",
+      "AccessKeyRotation": "Access keys should be rotated every 90 days and limited in use to service accounts where IAM roles are impractical."
+    },
+    "IAMManagement": {
+      "CreateUser": {
+        "Description": "Create an IAM user with minimal permissions and add them to a predefined group. Enforce MFA on creation.",
+        "Parameters": {
+          "username": {
+            "type": "string",
+            "description": "The username for the new IAM user."
+          },
+          "userGroup": {
+            "type": "string",
+            "description": "The group to assign the new IAM user to (e.g., ReadOnly, Developer, Admin).",
+            "default": "ReadOnly"
+          }
+        },
+        "BestPractices": [
+          "Assign users to predefined groups instead of attaching policies directly to users.",
+          "Use policies that follow the principle of least privilege."
+        ]
+      },
+      "EnforceMFA": {
+        "Description": "Enable Multi-Factor Authentication for a specified IAM user.",
+        "Parameters": {
+          "username": {
+            "type": "string",
+            "description": "The IAM user for whom MFA should be enforced."
+          }
+        },
+        "BestPractices": [
+          "MFA should be enabled on high-privilege accounts and all accounts that can access sensitive resources."
+        ]
+      },
+      "AssignPermissions": {
+        "Description": "Attach a policy to an IAM user based on role-based access control (RBAC) guidelines.",
+        "Parameters": {
+          "username": {
+            "type": "string",
+            "description": "The IAM user to whom permissions will be assigned."
+          },
+          "policyName": {
+            "type": "string",
+            "description": "The name of the IAM policy to attach."
+          }
+        },
+        "BestPractices": [
+          "Policies should be attached to groups rather than individual users where possible.",
+          "Regularly audit permissions to ensure they adhere to the principle of least privilege."
+        ]
+      },
+      "MonitorPolicyCompliance": {
+        "Description": "Review IAM policies for compliance with security standards and provide recommendations for improvements.",
+        "BestPractices": [
+          "Conduct periodic audits to identify unused or overly permissive policies.",
+          "Apply conditions within policies to restrict access based on IP addresses, device, or time of day as needed."
+        ]
+      }
+    }
+  }
+}
