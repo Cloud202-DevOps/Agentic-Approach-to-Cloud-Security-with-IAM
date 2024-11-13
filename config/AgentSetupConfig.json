@@ -1,0 +1,31 @@
+{
+  "AgentSetup": {
+    "AgentName": "IAM-Agentic-Automation",
+    "Description": "Automate IAM user and policy management with security best practices.",
+    "Model": "Claude 3 Sonnet v1",
+    "KnowledgeBase": "KnowledgeBaseInstructions.json",
+    "Guardrails": "Guardrails.json",
+    "ActionGroups": [
+      {
+        "Name": "CreateUser",
+        "Function": "CreateUser::CreateIAMUser",
+        "Description": "Automates the creation of new IAM users with group assignment and MFA enforcement."
+      },
+      {
+        "Name": "EnforceMFA",
+        "Function": "EnforceMFA::EnforceMFAForUser",
+        "Description": "Enables MFA for specific IAM users to enhance security."
+      },
+      {
+        "Name": "AssignPermissions",
+        "Function": "AssignPermissions::AssignUserPermissions",
+        "Description": "Assigns permissions to IAM users based on role and predefined policies."
+      },
+      {
+        "Name": "MonitorPolicyCompliance",
+        "Function": "MonitorPolicyCompliance::CheckPolicyCompliance",
+        "Description": "Monitors IAM policy compliance with security standards and provides recommendations."
+      }
+    ]
+  }
+}
