@@ -1,0 +1,47 @@
+{
+  "AlarmName": "IAMPolicyChangeAlarm",
+  "AlarmDescription": "Alarm triggered on IAM policy changes.",
+  "ActionsEnabled": true,
+  "OKActions": [
+    "arn:aws:sns:us-west-2:123456789012:IAMAlertsOK"
+  ],
+  "AlarmActions": [
+    "arn:aws:sns:us-west-2:123456789012:IAMAlerts"
+  ],
+  "InsufficientDataActions": [
+    "arn:aws:sns:us-west-2:123456789012:IAMAlertsInsufficientData"
+  ],
+  "MetricName": "IAMPolicyChanges",
+  "Namespace": "AWS/CloudTrail",
+  "Statistic": "Sum",
+  "Period": 300,
+  "EvaluationPeriods": 1,
+  "DatapointsToAlarm": 1,
+  "Threshold": 1,
+  "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+  "TreatMissingData": "breaching",
+  "Dimensions": [
+    {
+      "Name": "EventName",
+      "Value": "PutRolePolicy"
+    },
+    {
+      "Name": "EventName",
+      "Value": "PutUserPolicy"
+    },
+    {
+      "Name": "EventName",
+      "Value": "PutGroupPolicy"
+    }
+  ],
+  "Tags": [
+    {
+      "Key": "Environment",
+      "Value": "Production"
+    },
+    {
+      "Key": "Purpose",
+      "Value": "IAM Monitoring"
+    }
+  ]
+}
