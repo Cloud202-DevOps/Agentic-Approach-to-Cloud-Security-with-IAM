@@ -1,20 +1,26 @@
 # Use Cases for Agentic Approach in IAM Automation
+# Use Cases
 
 ## Use Case 1: Automated IAM User Onboarding
 
-- **Scenario**: Automate the onboarding of new users by ensuring they receive only the necessary permissions (least privilege) and have Multi-Factor Authentication (MFA) enforced for added security.
-
+- **Scenario**: Automate the onboarding process for new users with a focus on enforcing the principle of least privilege and mandatory Multi-Factor Authentication (MFA).
 - **Configuration and Commands**:
-  - **Create User**: Configure the `CreateUser` action group to automatically create new users with minimal permissions.
-  - **Assign to Group**: Add users to predefined IAM groups based on their roles (e.g., ReadOnly or Developer).
-  - **Enforce MFA**: Use the `EnforceMFA` action group to mandate MFA on all new user accounts.
+  - Example commands for creating new IAM users, assigning them to appropriate groups, and enforcing MFA upon initial login.
+  - Configuration files to automate this process using the Bedrock Agent's `CreateUser` and `EnforceMFA` action groups.
 
-- **Example JSON Configuration**:
-  ```json
-  {
-    "actionGroup": "CreateUser",
-    "userName": "NewUser",
-    "groupAssignment": ["DeveloperGroup"],
-    "enforceMFA": true,
-    "permissions": ["iam:CreateUser", "iam:AddUserToGroup", "iam:EnableMFADevice"]
-  }
+## Use Case 2: Policy Compliance and Auditing
+
+- **Scenario**: Continuously monitor and enforce policy compliance on IAM roles and users to ensure security and adherence to organizational policies.
+- **Configuration**:
+  - Use the `MonitorPolicyCompliance` action group to regularly check for compliance across IAM policies.
+  - Set up alerts for policy deviations or suspicious IAM activities, ensuring immediate response and remediation.
+
+## Use Case 3: Adaptive Permissions Based on Real-Time Usage
+
+- **Scenario**: Dynamically adapt IAM permissions based on real-time usage and recommendations provided by the agent.
+- **Setup Steps**:
+  - Configure adaptive IAM policies that respond to agent observations, ensuring permissions evolve to match actual usage patterns without compromising security.
+  - Use the Bedrock Agent to recommend permission adjustments, aligning with changing access needs while maintaining least privilege.
+
+Explore each use case for practical applications of agent-driven IAM management in AWS.
+
